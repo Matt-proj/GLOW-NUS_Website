@@ -122,6 +122,25 @@ app.get('/', (req, res) => {
   `);
 });
 
+//Routing Drop down//
+render(
+  <Provider store={store}>
+    <ThemeProvider theme={theme}>
+      <Router basename={process.env.PUBLIC_URL}>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <Route path="/mission" component={Our Mission} />
+          <Route path="/founding" component={Founding Team} />
+          <Route path="/contact" component={Contact Us} />
+          <Route path="/events" component={Events} />
+        </Switch>
+      </Router>
+    </ThemeProvider>
+  </Provider>,
+  document.getElementById("root")
+);
+
+//break//
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
